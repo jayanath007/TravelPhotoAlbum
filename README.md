@@ -12,7 +12,5 @@
 * Profit. :tada:
 
 
-## For serve the aplication run
-* Run `ionic serve`
  
 
