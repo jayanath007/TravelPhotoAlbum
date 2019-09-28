@@ -1,2 +1,2 @@
-# Ionic Angular Conference Application
+# Travel Photo Album
 
