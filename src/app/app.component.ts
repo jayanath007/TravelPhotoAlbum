@@ -19,7 +19,11 @@ import { UserData } from './providers/user-data';
 })
 export class AppComponent implements OnInit {
   appPages = [
-    
+    {
+      title: 'Create Album',
+      url: '/app/tabs/create-album',
+      icon: 'contacts'
+    },
     {
       title: 'Albums',
       url: '/app/tabs/speakers',

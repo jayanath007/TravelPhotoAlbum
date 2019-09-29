@@ -25,6 +25,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignUpModule)
   },
   {
+    path: 'create-album',
+    loadChildren: () => import('./pages/create-album/create-album.module').then(m => m.CreateAlbumPageModule)
+  },
+  {
     path: 'app',
     loadChildren: () => import('./pages/tabs-page/tabs-page.module').then(m => m.TabsModule)
   },
@@ -32,7 +36,8 @@ const routes: Routes = [
     path: 'tutorial',
     loadChildren: () => import('./pages/tutorial/tutorial.module').then(m => m.TutorialModule),
     canLoad: [CheckTutorial]
-  }
+  },
+
 ];
 
 @NgModule({

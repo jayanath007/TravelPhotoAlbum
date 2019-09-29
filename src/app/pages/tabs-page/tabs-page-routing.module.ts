@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
-import { SchedulePage } from '../schedule/schedule';
+import { CreateAlbumPage } from '../create-album/create-album.page';
 
 
 const routes: Routes = [
@@ -10,15 +10,15 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'schedule',
+        path: 'create-album',
         children: [
           {
             path: '',
-            component: SchedulePage,
+            component: CreateAlbumPage,
           },
           {
-            path: 'session/:sessionId',
-            loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
+            path: '',
+            loadChildren: () => import('../create-album/create-album.module').then(m => m.CreateAlbumPageModule)
           }
         ]
       },

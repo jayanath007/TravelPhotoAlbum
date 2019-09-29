@@ -45,14 +45,14 @@
 
       <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="session.tracks[0] | lowercase"
         [hidden]="session.hide">
-        <ion-item routerLink="/app/tabs/schedule/session/{{session.id}}">
+        <!-- <ion-item routerLink="/app/tabs/schedule/session/{{session.id}}">
           <ion-label>
             <h3>{{session.name}}</h3>
             <p>
               {{session.timeStart}} &mdash; {{session.timeEnd}}: {{session.location}}
             </p>
           </ion-label>
-        </ion-item>
+        </ion-item> -->
         <ion-item-options>
           <ion-item-option color="favorite" (click)="addFavorite(slidingItem, session)" *ngIf="segment === 'all'">
             Favorite
