@@ -1,7 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
-import { Config, ModalController, NavParams } from '@ionic/angular';
+import { Config, ModalController, NavParams, PopoverController } from '@ionic/angular';
 import { LocationPage } from '../location/location';
-
+import { PopoverPage } from '../../about-popover/about-popover';
 
 
 @Component({
@@ -17,6 +17,7 @@ export class UploadImagePage implements AfterViewInit {
   constructor(
     private config: Config,
     public modalCtrl: ModalController,
+    public popoverCtrl: PopoverController
   ) { }
 
   ionViewWillEnter() {
@@ -41,5 +42,15 @@ export class UploadImagePage implements AfterViewInit {
     await modal.present();
 
   }
-
+  async presentPopover(event: Event) {
+    const popover = await this.popoverCtrl.create({
+      component: PopoverPage,
+      event
+    });
+    await popover.present();
+  }
+  async onSave() {
+    this.modalCtrl.dismiss(data);
+  }
+  
 }

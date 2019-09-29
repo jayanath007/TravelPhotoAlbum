@@ -1,5 +1,3 @@
-
-
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -17,25 +15,48 @@
 
 
 <ion-content>
+  <form #createAlbumForm="ngForm" novalidate>
 
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Album Name<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="text"></ion-input>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-input placeholder="Album Name"></ion-input>
+      </ion-item> -->
 
+      <ion-item>
+        <ion-label>Start Location</ion-label>
+        <ion-select interface="popover">
+          <ion-select-option value="Katunayaka">Katunayaka</ion-select-option>
+          <ion-select-option value="Colombo">Colombo</ion-select-option>
+          <ion-select-option value="Kandy">Kandy</ion-select-option>
+          <ion-select-option value="Dambulla">Dambulla</ion-select-option>
+          <ion-select-option value="Sigiriya">Sigiriya</ion-select-option>
+          <ion-select-option value="Anuradapura">Anuradapura</ion-select-option>
+          <ion-select-option value="Polonnaruwa">Polonnaruwa</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Start Date</ion-label>
+        <ion-datetime value="2019-09-29" placeholder="Select Date"></ion-datetime>
+      </ion-item>
+    </ion-list>
 
-  <form #submitForm="ngForm" novalidate >
-  
-
-
-    <div class="ion-padding">
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="onCreateAlbum(createAlbumForm)" type="submit" expand="block">Create Album</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="onCancel()" color="light" expand="block">Cancel</ion-button>
+      </ion-col>
+    </ion-row>
+    <!-- <div class="ion-padding">
       <ion-button expand="block"(click)="addUploadImage()" type="submit">Upload Image </ion-button>
-    </div>
-
-
-
-
+    </div> -->
 
   </form>
-
-
-
-
 
 </ion-content>

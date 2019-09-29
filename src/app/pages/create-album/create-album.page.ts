@@ -3,6 +3,7 @@ import { ModalController, PopoverController } from '@ionic/angular';
 import { LocationPage } from './location/location';
 import { PopoverPage } from '../about-popover/about-popover';
 import { UploadImagePage } from './upload-image/upload-image';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'create-album',
@@ -18,7 +19,6 @@ export class CreateAlbumPage implements OnInit {
   ngOnInit() {
   }
 
-
   async presentPopover(event: Event) {
     const popover = await this.popoverCtrl.create({
       component: PopoverPage,
@@ -27,15 +27,14 @@ export class CreateAlbumPage implements OnInit {
     await popover.present();
   }
 
-
-
-
-  async addUploadImage() {
+  async onCreateAlbum() {
     const modal = await this.modalCtrl.create({
       component: UploadImagePage,
     });
     await modal.present();
 
   }
-
+  onCancel(data?: any) {
+    this.modalCtrl.dismiss(data);
+  }
 }

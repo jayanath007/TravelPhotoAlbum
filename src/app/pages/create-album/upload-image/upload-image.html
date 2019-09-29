@@ -1,21 +1,90 @@
-<ion-header translucent>
+<ion-header>
   <ion-toolbar>
-  
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Edit My Album</ion-title>
+    <ion-buttons slot="end">
+      <!-- <ion-buttons slot="end">
+            <ion-button (click)="dismiss()" strong>Done</ion-button>
+          </ion-buttons> -->
+      <!-- <ion-button (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" name="more"></ion-icon>
+      </ion-button> -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #createAlbumForm="ngForm" novalidate>
+
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Image Title<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Upload Image <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-button color="success">Success</ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-label>Start Location</ion-label>
+        <ion-select interface="popover">
+          <ion-select-option value="Katunayaka">Katunayaka</ion-select-option>
+          <ion-select-option value="Colombo">Colombo</ion-select-option>
+          <ion-select-option value="Kandy">Kandy</ion-select-option>
+          <ion-select-option value="Dambulla">Dambulla</ion-select-option>
+          <ion-select-option value="Sigiriya">Sigiriya</ion-select-option>
+          <ion-select-option value="Anuradapura">Anuradapura</ion-select-option>
+          <ion-select-option value="Polonnaruwa">Polonnaruwa</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Notes</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date</ion-label>
+        <ion-datetime value="2019-09-29" placeholder="Select Date"></ion-datetime>
+      </ion-item>
+    </ion-list>
+
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="onSave(createAlbumForm)" type="submit" expand="block">Save</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="dismiss()" color="light" expand="block">Cancel</ion-button>
+      </ion-col>
+    </ion-row>
+    <!-- <div class="ion-padding">
+        <ion-button expand="block"(click)="addUploadImage()" type="submit">Upload Image </ion-button>
+      </div> -->
+
+  </form>
+
+</ion-content>
+
+<!-- <ion-header translucent>
+  <ion-toolbar>
+
 
     <ion-title>
-     
+
     </ion-title>
 
     <ion-buttons slot="end">
       <ion-button (click)="dismiss()" strong>Done</ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content [fullscreen]>
+<!-- <ion-content [fullscreen]>
 
   <div class="ion-padding">
-    <ion-button expand="block"(click)="addLocation()" type="submit">Add location </ion-button>
+    <ion-button expand="block" (click)="addLocation()" type="submit">Add location </ion-button>
   </div>
 
 </ion-content>
@@ -23,7 +92,7 @@
 <ion-footer translucent *ngIf="ios">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button >Deselect All</ion-button>
+      <ion-button>Deselect All</ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->
