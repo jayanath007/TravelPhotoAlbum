@@ -27,7 +27,7 @@
       <ion-item>
         <ion-label position="stacked">Upload Image <ion-text color="danger">*</ion-text>
         </ion-label>
-        <ion-button color="success">Success</ion-button>
+        <ion-button color="success">Upload</ion-button>
       </ion-item>
       <ion-item>
         <ion-label>Start Location</ion-label>
@@ -42,7 +42,7 @@
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label position="stacked">Notes</ion-label>
+        <ion-label position="stacked">Description</ion-label>
         <ion-textarea></ion-textarea>
       </ion-item>
       <ion-item>
@@ -56,7 +56,7 @@
         <ion-button (click)="onSave(createAlbumForm)" type="submit" expand="block">Save</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="dismiss()" color="light" expand="block">Cancel</ion-button>
+        <ion-button (click)="onCancel()" color="light" expand="block">Cancel</ion-button>
       </ion-col>
     </ion-row>
     <!-- <div class="ion-padding">

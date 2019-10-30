@@ -2,7 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { Config, ModalController, NavParams, PopoverController } from '@ionic/angular';
 import { LocationPage } from '../location/location';
 import { PopoverPage } from '../../about-popover/about-popover';
-
+import { CreateAlbumPage } from '../create-album.page';
 
 @Component({
   selector: 'page-upload-image',
@@ -49,8 +49,18 @@ export class UploadImagePage implements AfterViewInit {
     });
     await popover.present();
   }
-  async onSave() {
-    this.modalCtrl.dismiss();
+  async onCancel(data?: any) {
+     // this.modalCtrl.dismiss(data);
   }
-  
+  async onSave() {
+<<<<<<< HEAD
+    this.modalCtrl.dismiss();
+=======
+    const modal = await this.modalCtrl.create({
+      component: CreateAlbumPage,
+    });
+    await modal.present();
+
+>>>>>>> 1cfcb95343cb5d4bcaf865f2e2969c2421649aa9
+  }
 }
