@@ -53,14 +53,6 @@ export class UploadImagePage implements AfterViewInit {
      // this.modalCtrl.dismiss(data);
   }
   async onSave() {
-<<<<<<< HEAD
     this.modalCtrl.dismiss();
-=======
-    const modal = await this.modalCtrl.create({
-      component: CreateAlbumPage,
-    });
-    await modal.present();
-
->>>>>>> 1cfcb95343cb5d4bcaf865f2e2969c2421649aa9
   }
 }
