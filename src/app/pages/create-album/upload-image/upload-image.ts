@@ -50,7 +50,7 @@ export class UploadImagePage implements AfterViewInit {
     await popover.present();
   }
   async onSave() {
-    this.modalCtrl.dismiss(data);
+    this.modalCtrl.dismiss();
   }
   
 }
